@@ -1,0 +1,280 @@
+/* ==========================================================================
+   1. VARIÁVEIS GLOBAIS (DESIGN SYSTEM)
+   ========================================================================== */
+:root {
+    --primary: #2d3436;
+    --accent: #27ae60;    /* Verde Dinheiro */
+    --bg: #f4f7f6;
+    --white: #ffffff;
+    --dark-blue: #2c3e50;
+    --text-gray: #636e72;
+    --comment-bg: #e8f5e9; /* Fundo suave para o comentário do Sniper */
+}
+
+/* ==========================================================================
+   2. ESTILOS BASE (RESET & TIPOGRAFIA)
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--primary);
+    line-height: 1.8;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   3. CABEÇALHO (HEADER) - COMUM A TODAS AS PÁGINAS
+   ========================================================================== */
+header {
+    background: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #eee;
+}
+
+.logo { 
+    font-weight: 800; 
+    font-size: 1.5rem; 
+    color: var(--accent); 
+    letter-spacing: -1px; 
+    text-decoration: none;
+}
+
+nav a { 
+    text-decoration: none; 
+    color: var(--primary); 
+    margin-left: 20px; 
+    font-weight: 500; 
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   4. COMPONENTES DO INDEX (HOME)
+   ========================================================================== */
+.data-banner {
+    background: linear-gradient(135deg, var(--accent), var(--dark-blue));
+    color: white;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.main-link {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.card-content { padding: 25px; }
+
+.tag {
+    background: #e8f5e9;
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card h2 { font-size: 1.3rem; margin: 15px 0; line-height: 1.4; color: var(--dark-blue); }
+
+.btn-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   5. COMPONENTES DO ARTIGO (POST)
+   ========================================================================== */
+.content-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.meta-info {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.content-wrapper h1 { font-size: 2.3rem; line-height: 1.2; margin-bottom: 20px; color: #2c3e50; }
+
+.my-comment {
+    background: var(--comment-bg);
+    border-left: 5px solid var(--accent);
+    padding: 25px;
+    font-style: italic;
+    margin: 35px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.my-comment strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.post-body p { font-size: 1.1rem; }
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.comment-section {
+    margin-top: 50px;
+    border-top: 2px solid #eee;
+    padding-top: 30px;
+}
+
+/* ==========================================================================
+   6. RODAPÉ (FOOTER)
+   ========================================================================== */
+.main-footer {
+    background-color: var(--dark-blue);
+    color: #ecf0f1;
+    padding: 50px 5% 20px 5%;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    /* Divide em 3 colunas em telas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 30px;
+}
+
+.logo-footer {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    color: #bdc3c7;
+    margin: 0;
+}
+
+.footer-links h4 {
+    color: var(--white);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    display: block;
+    color: #bdc3c7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover { 
+    color: var(--accent); 
+    padding-left: 5px; 
+}
+
+/* AJUSTE AQUI: Alinhamento da Tag Direita */
+.footer-tag { 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end; /* Alinha os itens à direita do container */
+    text-align: right;     /* Alinha o texto à direita */
+}
+
+.footer-tag p { 
+    margin: 0 0 5px 0; /* Remove margens padrão e deixa apenas um respiro embaixo */
+    color: #ecf0f1;
+}
+
+.footer-tag small { 
+    color: #7f8c8d;
+    display: block;
+}
+
+/* Responsividade: No mobile tudo centraliza */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+    .footer-tag { 
+        align-items: center; 
+        text-align: center;
+    }
+    .footer-info p {
+        margin: 0 auto;
+    }
+}
+.btn-donation {
+    display: block;
+    width: fit-content;
+    margin: 40px auto;
+    background: var(--accent);
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+@media (max-width: 768px) {
+    .footer-tag { text-align: left; }
+    .content-wrapper { padding: 20px; margin: 10px; }
+}

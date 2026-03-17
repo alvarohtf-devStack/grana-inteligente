@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Prompts de IA para Finanças | Grana Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">GRANA INTELIGENTE</a>
+    </header>
+
+    <main class="content-wrapper">
+        <a href="index.html" class="back-btn">← Voltar para o início</a>
+        
+        <div class="meta-info">Publicado em 16 de Março de 2026 • Por Álvaro</div>
+        
+        <h1>3 Prompts de IA que fazem o trabalho de um assistente financeiro de elite</h1>
+
+        <article class="post-body">
+            <p>Muitos empreendedores perdem o controle do caixa não por falta de vontade, mas por falta de tempo. Analisar planilhas e prever gastos futuros consome horas que você deveria estar usando para vender. A boa notícia? Se você souber como "conversar" com a IA, você ganha um assistente financeiro de graça.</p>
+
+            <div class="my-comment">
+                <strong>O Comentário do Sniper</strong> 
+                "Como desenvolvedor FATEC, vejo muita gente tentando usar a IA para escrever poemas, enquanto o verdadeiro ouro está na análise de dados estruturados. No Grana Inteligente, defendemos que você não precisa ser um expert em finanças, você só precisa saber quais perguntas fazer para a máquina."
+            </div>
+
+            <h2>Prompt 1: O Analista de Fluxo de Caixa</h2>
+            <p><strong>O Problema:</strong> Você olha para o saldo hoje, mas não sabe se terá dinheiro para os boletos da semana que vem.</p>
+            <div style="background: #f1f2f6; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); font-family: monospace; font-size: 0.9rem; margin-bottom: 20px;">
+                "Atue como um CFO experiente. Vou te fornecer uma lista de entradas e saídas previstas para os próximos 30 dias. Analise se haverá algum momento de saldo negativo e sugira 3 ações estratégicas para reduzir custos sem afetar a operação."
+            </div>
+
+            <h2>Prompt 2: O Caçador de Taxas Ocultas</h2>
+            <p><strong>O Problema:</strong> Você recebe o relatório da maquininha e não entende por que o valor líquido é tão baixo.</p>
+            <div style="background: #f1f2f6; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); font-family: monospace; font-size: 0.9rem; margin-bottom: 20px;">
+                "Analise este extrato. Identifique o percentual real de taxa de intermediação cobrado em cada venda, separando por 'Adm' e 'Antecipação'. Aponte quais vendas foram menos lucrativas devido ao parcelamento longo."
+            </div>
+
+            <h2>Prompt 3: Simulador de Precificação de Sobrevivência</h2>
+            <p><strong>O Problema:</strong> Medo de aumentar o preço e perder o cliente, ou manter o preço e quebrar.</p>
+            <div style="background: #f1f2f6; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); font-family: monospace; font-size: 0.9rem; margin-bottom: 20px;">
+                "Meu custo atual é [X] e vendo por [Y]. Se eu aumentar meu preço em 15%, quantos clientes posso perder antes que meu lucro total seja menor do que hoje?"
+            </div>
+        </article>
+
+<section class="prompt-factory" style="border: 2px solid var(--accent); border-radius: 15px; padding: 30px; background: #fff; margin: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+    <h3 style="color: var(--accent); margin-top: 0; display: flex; align-items: center; gap: 10px;">
+        🛠️ Prompt Builder Sniper <span style="font-size: 0.7rem; background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 10px;">V1.0</span>
+    </h3>
+    <p style="font-size: 0.9rem; color: var(--text-gray);">Configure os parâmetros abaixo para gerar uma instrução de análise financeira personalizada para a sua IA.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+        <div>
+            <label style="display:block; font-size:0.75rem; font-weight:bold; margin-bottom:5px;">PREÇO DE VENDA (R$)</label>
+            <input type="number" id="p_venda" placeholder="Ex: 150.00" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+        </div>
+        <div>
+            <label style="display:block; font-size:0.75rem; font-weight:bold; margin-bottom:5px;">CUSTO PRODUTO/MÃO DE OBRA (R$)</label>
+            <input type="number" id="p_custo" placeholder="Ex: 60.00" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+        </div>
+
+        <div>
+            <label style="display:block; font-size:0.75rem; font-weight:bold; margin-bottom:5px;">INVESTIMENTO EM ADS (R$)</label>
+            <input type="number" id="p_ads" placeholder="Total gasto no mês" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+        </div>
+        <div>
+            <label style="display:block; font-size:0.75rem; font-weight:bold; margin-bottom:5px;">VENDAS REALIZADAS</label>
+            <input type="number" id="p_vendas_qtd" placeholder="Qtd de vendas" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+        </div>
+
+        <div style="grid-column: span 2;">
+            <label style="display:block; font-size:0.75rem; font-weight:bold; margin-bottom:5px;">FOCO DA ANÁLISE (O que você quer saber?)</label>
+            <select id="p_objetivo" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; background: white;">
+                <option value="viabilidade">Verificar se o negócio é viável e lucrativo</option>
+                <option value="escala">Descobrir como dobrar o faturamento mantendo a margem</option>
+                <option value="corte">Identificar onde posso cortar custos sem perder qualidade</option>
+                <option value="concorrencia">Sugerir um preço competitivo baseado nos custos</option>
+            </select>
+        </div>
+    </div>
+
+    <button onclick="construirPrompt()" style="width:100%; background: var(--accent); color: white; border: none; padding: 15px; margin-top: 25px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 1rem;">
+        ⚡ GERAR E COPIAR PROMPT ESTRATÉGICO
+    </button>
+
+    <div id="box_prompt" style="display:none; margin-top:25px;">
+        <label style="display:block; font-size:0.75rem; font-weight:bold; margin-bottom:5px; color: var(--accent);">PROMPT GERADO (PRONTO PARA COLAR NA IA):</label>
+        <textarea id="resultado_prompt" readonly style="width:100%; height:180px; padding:15px; border:2px solid var(--accent); border-radius:8px; background: #f9fffb; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; color: #2c3e50;"></textarea>
+        <p style="font-size: 0.75rem; color: #27ae60; font-weight: bold; margin-top: 5px;">✅ Copiado para a área de transferência!</p>
+    </div>
+</section>
+
+
+
+        <div style="background-color: #f8f9fa; border: 2px dashed #d1d8e0; border-radius: 12px; padding: 25px; margin: 30px 0; position: relative;">
+            <span style="position: absolute; top: -15px; left: 20px; background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">
+                Exemplo Real: A Ilusão do Faturamento
+            </span>
+            <p style="margin-top: 10px; font-style: italic; color: #2c3e50;">
+                "Muitos lucram centavos por venda achando que estão ganhando dezenas de reais. Sem medir o Marketing (CAC) e as taxas, você opera no escuro."
+            </p>
+        </div>
+
+        <section class="comment-section">
+    <h3>Discussão e Dúvidas</h3>
+    
+    <div id="cusdis_thread"
+    data-host="https://cusdis.com"
+    data-app-id="5b313b93-6560-46d0-8afb-6066aaa48b54" 
+    data-page-id="artigo-prompts-ia" 
+    data-page-url="" 
+    data-page-title="3 Prompts de IA Financeiros"
+></div>
+
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    
+    <p style="font-size: 0.8rem; color: #95a5a6; margin-top: 15px; text-align: center;">
+        Sua privacidade é importante. Comentários moderados pelo autor.
+    </p>
+</section>
+
+    </main>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-info">
+            <span class="logo-footer">GRANA INTELIGENTE</span>
+            <p>Transformando tecnologia em lucro real para o pequeno empreendedor.</p>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Links Úteis</h4>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre o Autor</a>
+            <a href="privacidade.html">Política de Privacidade</a>
+        </div>
+        
+        <div class="footer-tag">
+            <p>Operando sob o Princípio de Pareto: 80/20</p>
+            <small>&copy; 2026 - Desenvolvido por Álvaro (Sniper.Dev)</small>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
