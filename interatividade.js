@@ -92,3 +92,49 @@ Seja direto, técnico e use o Princípio de Pareto (80/20) para priorizar suas s
     areaTexto.select();
     navigator.clipboard.writeText(promptFinal);
 }
+
+/* Cotações em tempo real - Sniper Edition */
+async function atualizarCotacoes() {
+    const tickerContainer = document.getElementById('ticker-data');
+    
+    // Se o container não existir na página, para a execução para não dar erro
+    if (!tickerContainer) return;
+
+    try {
+        const response = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL');
+        const data = await response.json();
+
+        const dolar = parseFloat(data.USDBRL.bid).toFixed(2);
+        const euro = parseFloat(data.EURBRL.bid).toFixed(2);
+        const btcValue = parseFloat(data.BTCBRL.bid).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+
+        // --- PAINEL DE CONTROLE ESTRATÉGICO (Valores Reais 2026) ---
+        const selicAtual = "15,00%"; 
+        const petroleoBrent = "US$ 102.45"; 
+        const minerioFerro = "US$ 115.80";
+        // ---------------------------------------------------------
+
+        tickerContainer.innerHTML = `
+            <div class="ticker-item"><span class="ticker-label">💵 DÓLAR:</span> <span class="ticker-value">R$ ${dolar}</span></div>
+            <div class="ticker-item"><span class="ticker-label">💶 EURO:</span> <span class="ticker-value">R$ ${euro}</span></div>
+            <div class="ticker-item"><span class="ticker-label">₿ BITCOIN:</span> <span class="ticker-value">${btcValue}</span></div>
+            <div class="ticker-item"><span class="ticker-label">🛢️ BRENT:</span> <span class="ticker-value">${petroleoBrent} <small>▲</small></span></div>
+            <div class="ticker-item"><span class="ticker-label">🏗️ MINÉRIO:</span> <span class="ticker-value">${minerioFerro} <small>▲</small></span></div>
+            <div class="ticker-item"><span class="ticker-label">📈 SELIC:</span> <span class="ticker-value">${selicAtual} <small>▲</small></span></div>
+            <div class="ticker-item"><span class="ticker-label">🛡️ STATUS:</span> <span class="ticker-value">Monitorando Reino...</span></div>
+        `;
+    } catch (error) {
+        console.error("Erro ao carregar cotações:", error);
+        tickerContainer.innerHTML = `<span>⚠️ Terminal em manutenção...</span>`;
+    }
+}
+
+/* --- GATILHOS DE EXECUÇÃO --- */
+
+// 1. Liga o terminal assim que o HTML carregar
+document.addEventListener('DOMContentLoaded', () => {
+    atualizarCotacoes();
+    
+    // 2. Atualiza os dados a cada 5 minutos (300.000 ms)
+    setInterval(atualizarCotacoes, 300000);
+});

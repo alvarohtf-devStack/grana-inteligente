@@ -278,3 +278,81 @@ nav a:hover {
     .footer-tag { text-align: left; }
     .content-wrapper { padding: 20px; margin: 10px; }
 }
+
+.ticker-wrapper {
+    background: #0a0a0a; /* Fundo mais profundo */
+    color: #00ff41; 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    padding: 12px 0;
+    overflow: hidden;
+    border-bottom: 2px solid #2ecc71; /* Accent verde fixo para consistência */
+    width: 100%;
+    display: flex;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.1); /* Brilho interno sutil */
+}
+
+/* Efeito de desfoque nas bordas para as cotações "surgirem" e "sumirem" suavemente */
+.ticker-wrapper::before,
+.ticker-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+}
+.ticker-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #0a0a0a, transparent);
+}
+.ticker-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #0a0a0a, transparent);
+}
+
+.ticker-content {
+    display: flex;
+    white-space: nowrap;
+    gap: 80px; /* Mais espaço para clareza */
+    padding-left: 100%; 
+    animation: ticker-move 60s linear infinite; /* 60s: Velocidade de cruzeiro profissional */
+    will-change: transform; /* Otimização de performance para animação suave */
+}
+
+.ticker-content:hover {
+    animation-play-state: paused;
+    cursor: crosshair; /* Cursor de precisão (Sniper) */
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticker-label {
+    color: #555; /* Cinza mais escuro para destacar o valor */
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.ticker-value {
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.4); /* Efeito neon suave */
+}
+
+/* A Mágica do Movimento Infinito Real */
+@keyframes ticker-move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exatamente a largura total do conteúdo para a esquerda */
+        transform: translateX(-200%); 
+    }
+}
