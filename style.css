@@ -463,3 +463,8 @@ nav a:hover {
         text-align: center; /* Melhora leitura no celular */
     }
 }
+
+.footer-social-icons a:hover {
+    color: #27ae60 !important;
+    transform: translateY(-3px); /* Faz o ícone "pular" levemente */
+}
