@@ -356,3 +356,110 @@ nav a:hover {
         transform: translateX(-200%); 
     }
 }
+
+/* --- ESCOPO EXCLUSIVO PÁGINA SOBRE --- */
+/* --- ESCOPO EXCLUSIVO PÁGINA SOBRE (VERSÃO SNIPER) --- */
+
+.page-about {
+    min-height: 85vh;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    max-width: 1100px; /* Garante que o conteúdo não espalhe demais */
+    margin: 40px auto; /* Centraliza o container na tela e dá margem topo/baixo */
+    padding: 20px;
+    gap: 60px; /* Espaço generoso entre imagem e texto */
+}
+
+/* Ajuste da Imagem: Mantendo a proporção sem distorcer */
+.page-about .profile-img { 
+    flex: 1; 
+    min-width: 320px; 
+    max-width: 400px;
+    height: 450px; /* Aumentei um pouco para elegância */
+    border-radius: 20px; 
+    box-shadow: 20px 20px 0px #27ae60; 
+    background: #ddd; 
+    object-fit: cover;
+}
+
+/* Ajuste do Bloco de Texto: Melhor distribuição */
+.page-about .about-text { 
+    flex: 1.5; /* Dá um pouco mais de espaço para o texto que para a imagem */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page-about .about-text h1 { 
+    color: #2c3e50; 
+    font-size: 2.8rem; /* Um pouco maior para autoridade */
+    margin: 0 0 15px 0; 
+    line-height: 1.1;
+}
+
+.page-about .about-text h2 { 
+    color: #27ae60; 
+    font-size: 1rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    margin-bottom: 5px; 
+}
+
+.page-about .about-text p {
+    color: #444; /* Cinza levemente mais suave para leitura longa */
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    text-align: justify; /* Alinhamento elegante para parágrafos técnicos */
+}
+
+/* Box de destaque refinada */
+.page-about .highlight-box { 
+    background: #ffffff; 
+    border-left: 6px solid #27ae60; 
+    padding: 25px; 
+    margin: 20px 0; 
+    border-radius: 4px; /* Bordas menos arredondadas para ar mais sério */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Botão CTA alinhado à esquerda */
+.page-about .cta-button {
+    align-self: flex-start; /* Garante que o botão não estique */
+    background: #27ae60; 
+    color: white;
+    padding: 16px 35px; 
+    border-radius: 8px; /* Combinando com a box de destaque */
+    text-decoration: none;
+    font-weight: bold; 
+    margin-top: 10px; 
+    transition: all 0.3s ease;
+}
+
+/* RESPONSIVIDADE: Crucial para o celular */
+@media (max-width: 768px) {
+    .page-about {
+        flex-direction: column; /* Empilha imagem e texto */
+        text-align: center;
+        margin-top: 20px;
+        gap: 30px;
+    }
+
+    .page-about .profile-img {
+        max-width: 280px;
+        height: 300px;
+        box-shadow: 10px 10px 0px #27ae60; /* Sombra menor no mobile */
+    }
+
+    .page-about .about-text h1 {
+        font-size: 2rem;
+    }
+
+    .page-about .cta-button {
+        align-self: center; /* Centraliza o botão no mobile */
+    }
+    
+    .page-about .about-text p {
+        text-align: center; /* Melhora leitura no celular */
+    }
+}
